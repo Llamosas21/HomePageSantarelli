@@ -1,0 +1,329 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #0F172A;
+    color: #D1D5DB;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    background-color: #1E293B;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.main-title {
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 2.25rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #9CA3AF;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.form-section h2 {
+    font-size: 1.25rem;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #334155;
+    margin: 40px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #9CA3AF;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    background-color: #334155;
+    color: #FFFFFF;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #fc4b02;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+
+input[readonly]:focus {
+    border-color: #475569;
+    box-shadow: none;
+}
+
+input[type="datetime-local"] {
+    color-scheme: dark;
+}
+
+input[readonly] {
+    background-color: #1f2937;
+    cursor: not-allowed;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    background-color: #ff6221;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #fc4b02;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
+}
+
+.success, .error {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.success {
+    background-color: #166534;
+    color: #BBF7D0;
+    border: 1px solid #22C55E;
+}
+
+.error {
+    background-color: #991B1B;
+    color: #FECACA;
+    border: 1px solid #EF4444;
+}
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 20px;
+    }
+}
+
+/* --- Estilos Antiguos (Para Referencia o Limpieza) --- */
+.micro-fila {
+    display: flex;
+    flex-wrap: nowrap; 
+    align-items: flex-end; 
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.micro-fila > div:first-child { flex: 1; }
+.micro-fila > div:nth-child(2) { width: 120px; }
+.micro-fila select,
+.micro-fila input { width: 100%; }
+.btn-remove-micro {
+    background-color: #334155;
+    color: #FFFFFF;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0;
+    transition: all 0.2s ease;
+    margin-bottom: 2px; 
+}
+.btn-remove-micro:hover {
+    background-color: #991b1b;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* --- Nuevos Estilos para Tabla de Micros --- */
+
+/* Contenedor del selector para agregar */
+.micro-selector-grid {
+    display: grid;
+    grid-template-columns: 1fr auto auto; /* Tipo, Cantidad, Botón */
+    gap: 15px;
+    align-items: flex-end; /* Alinea los elementos abajo */
+    margin-bottom: 25px;
+}
+
+.micro-selector-grid > div {
+    flex: 1; /* El select ocupa el espacio sobrante */
+}
+
+/* Botón "Agregar" */
+.btn-add {
+    background-color: #166534; /* Verde */
+    color: white;
+    border: none;
+    padding: 0 20px;
+    height: 48px; /* Misma altura que inputs */
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin: 0;
+    width: auto;
+}
+
+.btn-add:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(21, 128, 61, 0.3);
+}
+
+/* Tabla de micros */
+#micros-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#micros-table thead {
+    background-color: #334155;
+}
+
+#micros-table th, 
+#micros-table td {
+    padding: 12px 15px;
+    border: 1px solid #475569;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#micros-table th {
+    font-size: 14px;
+    color: #E5E7EB;
+    font-weight: 600;
+}
+
+#micros-table td {
+    font-size: 15px;
+}
+
+/* Anchos específicos para columnas */
+#micros-table td:nth-child(2) { width: 100px; } /* Cantidad */
+#micros-table td:nth-child(3), 
+#micros-table td:nth-child(4) { width: 140px; text-align: right; } /* Precios */
+#micros-table td:nth-child(5) { width: 60px; text-align: center; } /* Quitar */
+
+#micros-table input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    margin: -5px 0; /* Ajuste para que entre bien */
+    text-align: center;
+}
+
+/* El botón de quitar ahora está en la tabla */
+.btn-remove-micro {
+    margin-bottom: 0; /* Resetea el margen de la clase original */
+    height: 38px;
+    width: 38px;
+}
+
+.modal-overlay {
+    /* Oculto por defecto */
+    display: none; 
+    opacity: 0;
+
+    /* Posición fija para cubrir toda la pantalla */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Fondo oscuro semi-transparente */
+    background-color: rgba(15, 23, 42, 0.8);
+    
+    /* Centrar el contenido */
+    justify-content: center;
+    align-items: center;
+    
+    /* Asegurarse de que esté por encima de todo */
+    z-index: 1000;
+    
+    /* Animación suave */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Clase para mostrar el modal */
+.modal-overlay.visible {
+    display: flex !important;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    /* Estilo de la caja (similar al .container) */
+    background-color: #1E293B;
+    padding: 40px 50px;
+    border-radius: 16px;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    
+    /* Centrar texto e ícono */
+    text-align: center;
+    
+    /* Animación de entrada */
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in-out;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h2 {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: 15px;
+}
+
+/* Estilos para el ícono SVG */
+.modal-icon {
+    width: 80px;
+    height: 80px;
+    color: #22C55E; /* Verde éxito */
+}
